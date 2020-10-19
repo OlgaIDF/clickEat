@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="site BNB">
+    <meta="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="autor" content="Olha NEKRASHEVYCH">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5cc1af7af2.js" crossorigin="anonymous"></script>
+        <title>ClickEat-{% block title %}base{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+    <header>
+    <img src="img/logo.png" class="img-fluid logo floayt-left" alt="logo">
+   <a href="#" class="float-right login"><i class="fas fa-sign-in-alt"></i></a>
+
+    </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+            <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>

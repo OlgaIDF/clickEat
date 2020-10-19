@@ -1,0 +1,25 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background: url(../img/pattern.png) !important;
+}
+header {
+    width: 100%;
+    height: 9rem;
+    background-color: white;
+    margin: 0 auto;
+  }
+
+ .logo
+  {
+      width: 7rem;
+     margin: 2rem;
+  }
+  .login{
+    margin: 4rem;
+color:#79a67f;
+font-size: 1.5rem;
+  }
+  .login :hover{
+    color: #a2c3a8;
+  }
+ 
