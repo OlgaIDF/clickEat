@@ -15,11 +15,65 @@
     </head>
     <body>
     <header>
-    <img src="img/logo.png" class="img-fluid logo floayt-left" alt="logo">
-   <a href="#" class="float-right login"><i class="fas fa-sign-in-alt"></i></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="#"><img src="img/logo.png" class="img-fluid logo" alt="logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#accueil">Accueil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#resto1">Restaurant1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Restaurant2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Restaurant3</a>
+      </li>
+     
+    </ul>
+      </div>
+       <a href="#" class="float-right login"><i class="fas fa-sign-in-alt"></i></a>
+</nav>
 
     </header>
-        {% block body %}{% endblock %}
+    
+     {% block body %}{% endblock %}
+     <footer class="alert-dark">
+     
+       
+
+       <div class="container-fluid">
+            <div class="row text-center text-dark">
+                <div class="col-md-4 p-5 my-auto">
+                    <p>Quelques liens</p>
+                   
+                    <ul class="text-left liens">
+                        <li><a href="#">Mentions legales</a></li>
+                        <li><a href="#">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 p-5 my-auto">
+<img src="img/logo.png" class="img-fluid logo mx-auto d-block" alt="logo">
+</div>
+
+ <div class="col-md-4 p-5 my-auto rs">
+  <p>Suivez nous</p>
+
+<ul>
+ <li><a href="#"><i class="fab fa-facebook px-1"></i></a></li>
+<li><a href="#"><i class="fab fa-twitter px-1"></i></a></li>
+</ul>
+ </div>
+ </div>
+     </footer>
+
+
         {% block javascripts %}{% endblock %}
             <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

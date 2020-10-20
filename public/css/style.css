@@ -1,25 +1,69 @@
+:root{
+  font-size: calc(0.6em + 1vw);
+}
 body{
     font-family: 'Roboto', sans-serif;
     background: url(../img/pattern.png) !important;
 }
-header {
-    width: 100%;
-    height: 9rem;
-    background-color: white;
-    margin: 0 auto;
-  }
+h5, h2{
+  font-family: 'Lato', sans-serif;
+  
+  
+}
+h2{
+  letter-spacing: 0.1rem;
+ 
 
- .logo
-  {
-      width: 7rem;
-     margin: 2rem;
-  }
+}
+
+
+
+.logo{
+width: 8rem;
+}
   .login{
-    margin: 4rem;
-color:#79a67f;
+  color:#79a67f;
 font-size: 1.5rem;
   }
   .login :hover{
     color: #a2c3a8;
   }
- 
+section{
+  margin-top: 8rem;
+}
+  .card{
+    width: 14rem;
+  }
+  .card-text{
+    font-size: 0.7rem;
+  }
+  .btn-sm{
+    background-color: #79a67f ;
+    color: white;
+    text-decoration:none;
+  }
+  .btn-sm:hover{
+    background-color:  #a2c3a8 ;
+    color: white;
+    text-decoration: none;
+  }
+
+  footer a{
+    color:#79a67f;
+    
+  }
+  footer a:hover{
+    color:#a2c3a8;
+  }
+  .rs ul li{
+    font-size: 1.5rem;
+   display: inline-block;
+  list-style-type: none;
+  }
+  .liens{
+    font-size:  0.8rem;
+  }
+
+
+
+  
