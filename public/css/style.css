@@ -4,20 +4,28 @@
 body{
     font-family: 'Roboto', sans-serif;
     background: url(../img/pattern.png) !important;
+   padding-top: 4rem;
 }
-h5, h2{
-  font-family: 'Lato', sans-serif;
-  
+.navbar {
+
+  height: 4rem;
+}
+
+:target:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -4rem; 
+  height: 4rem; 
+  visibility: hidden; 
+}
+
+h2, h5, h6 {
+  font-family: 'Norican', cursive;
   
 }
 h2{
-  letter-spacing: 0.1rem;
- 
-
+  letter-spacing: 0.1rem; 
 }
-
-
-
 .logo{
 width: 8rem;
 }
@@ -28,9 +36,7 @@ font-size: 1.5rem;
   .login :hover{
     color: #a2c3a8;
   }
-section{
-  margin-top: 8rem;
-}
+
   .card{
     width: 14rem;
   }

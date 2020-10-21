@@ -8,7 +8,7 @@
         <meta name="autor" content="Olha NEKRASHEVYCH">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Norican&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5cc1af7af2.js" crossorigin="anonymous"></script>
         <title>ClickEat-{% block title %}base{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
@@ -37,7 +37,7 @@
       </li>
      
     </ul>
-      </div>
+    
        <a href="#" class="float-right login"><i class="fas fa-sign-in-alt"></i></a>
 </nav>
 
@@ -45,13 +45,12 @@
     
      {% block body %}{% endblock %}
      <footer class="alert-dark">
-     
-       
+           
 
        <div class="container-fluid">
             <div class="row text-center text-dark">
                 <div class="col-md-4 p-5 my-auto">
-                    <p>Quelques liens</p>
+                    <h6>Quelques liens</h6>
                    
                     <ul class="text-left liens">
                         <li><a href="#">Mentions legales</a></li>
@@ -63,7 +62,7 @@
 </div>
 
  <div class="col-md-4 p-5 my-auto rs">
-  <p>Suivez nous</p>
+  <h6>Suivez nous</h6>
 
 <ul>
  <li><a href="#"><i class="fab fa-facebook px-1"></i></a></li>
@@ -77,5 +76,6 @@
         {% block javascripts %}{% endblock %}
             <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     </body>
 </html>
