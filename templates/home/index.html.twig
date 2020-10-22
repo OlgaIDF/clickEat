@@ -12,20 +12,41 @@
 </div>
 </div>
 <div class="row">
-<div class="col-4 p-3">
+{% for restaurant in restaurants %}
+<div class="col-6">
+<div class="cardh mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4 mt-5">
+     <img src="img/resto/italian.jpg" class="card-img-top" alt="...">
+
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ restaurant.nom }}</h5>
+        <p class="card-text">{{ restaurant.description }}</p>
+        <a href="#{{ restaurant.nom }}" class="btn-sm float-right">Voir les menus</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{# <div class="col-4 p-3">
+
 <div class="card m-3">
   <img src="img/resto/italian.jpg" class="card-img-top" alt="...">
   <div class="card-body text-center">
-    <h5 class="card-title ">Restaurant 1</h5>
-    <p class="card-text text-left">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title ">{{ restaurant.nom }}</h5>
+    <p class="card-text text-left">{{ restaurant.description }}</p>
     <a href="#resto" class="btn-sm ">Voir les menus</a>
   </div>
   
 </div>
-</div>
+</div> #}
+{% endfor %}
 </div>
 </section>
-<div id="resto1">
+<section id="Resto1">
 
 <div class="container-fluid">
 <div class="row">
@@ -34,22 +55,56 @@
 </div>
 </div>
 <div class="row">
+{% for menu in menus %}
+{% if menu.restaurant.id  == '1' %}
 <div class="col-4 p-3">
+
+
+
 
 <div class="card m-3">
   <img src="img/resto/italian.jpg" class="card-img-top" alt="...">
   <div class="card-body text-center">
-    <h5 class="card-title ">Menu 1</h5>
+    <h5 class="card-title ">{{ menu.nom }}</h5>
     <p class="card-text text-left">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <p>&euro;</p>
+    <p>{{ menu.prix }} &euro;</p>
     <a href="#" class="btn-sm ">Ajouter au panier</a>
     
   </div>
 </div>
 </div>
+{% endif %}
+{% endfor %}
 </div>
 </section>
+<section id="resto2">
 
+<div class="container-fluid">
+<div class="row">
+<div class="col-12 text-center">
+<h2 class="my-4 text-center">Restaurant 2</h2>
+</div>
+</div>
+<div class="row">
+{% for menu in menus %}
+{% if menu.restaurant.id  == '2' %}
+<div class="col-4 p-3">
+
+<div class="card m-3">
+  <img src="img/resto/italian.jpg" class="card-img-top" alt="...">
+  <div class="card-body text-center">
+    <h5 class="card-title ">{{ menu.nom }}</h5>
+    <p class="card-text text-left">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p>{{ menu.prix }} &euro;</p>
+    <a href="#" class="btn-sm ">Ajouter au panier</a>
+    
+  </div>
+</div>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+</section>
 
 
    
