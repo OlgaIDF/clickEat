@@ -13,7 +13,7 @@
 </div>
 <div class="row">
 {% for restaurant in restaurants %}
-<div class="col-6">
+<div class="col-md-6 col-sm-12">
 <div class="cardh mb-3">
   <div class="row no-gutters">
     <div class="col-md-4 mt-5">
@@ -57,7 +57,7 @@
 <div class="row">
 {% for menu in menus %}
 {% if menu.restaurant.nom  == 'Resto1' %}
-<div class="col-4 p-3">
+<div class="col-md-4 col-sm-12git  p-3">
 
 
 
@@ -66,7 +66,7 @@
   <img src="img/resto/italian.jpg" class="card-img-top" alt="...">
   <div class="card-body text-center">
     <h5 class="card-title ">{{ menu.nom }}</h5>
-    <p class="card-text text-left">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text text-left">{{ menu.composants }}</p>
     <p>{{ menu.prix }} &euro;</p>
     <a href="#" class="btn-sm ">Ajouter au panier</a>
     
