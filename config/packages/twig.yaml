@@ -5,3 +5,4 @@ twig:
     exception_controller: null
     globals:
         copyright: '%app.copyright%'
+    form_themes: ['bootstrap_4_layout.html.twig']

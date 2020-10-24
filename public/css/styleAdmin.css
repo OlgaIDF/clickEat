@@ -1,0 +1,41 @@
+:root{
+    font-size: calc(0.6em + 1vw);
+
+       
+       
+  }
+  body{
+      font-family: 'Roboto', sans-serif;
+      text-decoration: none;
+        list-style-type: none;
+  }
+ 
+  .copyright{
+ 
+    font-size: 0.7rem;
+  }
+  .listadmin {
+    font-size: 0.7rem;
+    list-style-type: none;
+  }
+ 
+  .listadmin ul li a{
+    color: black;
+    text-decoration:none;
+    
+  }
+  a{
+    color: #FFFFFF;
+}
+
+    a:hover{
+        color: #FFFFFF;
+    }
+
+table a{
+    color: #000000;
+}
+
+    table a:hover{
+        color: #000000;
+    }
