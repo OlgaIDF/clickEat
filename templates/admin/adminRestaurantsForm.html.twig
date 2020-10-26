@@ -1,0 +1,14 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}restaurants-form{% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+<div class="col-10 p-5">
+    
+        <h2>Formulaire du restaurant</h2>
+        {{ form_start(formulaireRestaurant) }}
+        {{ form_end(formulaireRestaurant) }}
+        </div>
+{% endblock %}
