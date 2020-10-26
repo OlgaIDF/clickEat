@@ -34,8 +34,9 @@ class MenuType extends AbstractType
                 ]
             ]
             )
-            ->add('img_menu', TextType::class, [
+            ->add('img_menu', FileType::class, [
                 'required' => true,
+                'mapped' => false,
                 'label' => 'Photo du menu',
                 'attr' => [
                     'placeholder' => 'image.jpg'

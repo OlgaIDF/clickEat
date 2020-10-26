@@ -8,6 +8,7 @@ use App\Repository\RestaurantsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class AdminRestaurantsController extends AbstractController
 {
@@ -31,9 +32,32 @@ class AdminRestaurantsController extends AbstractController
         $form = $this->createForm(RestaurantType::class, $restaurant);
         $form->handleRequest($request);
 
+        // récupèrer les informations de l'img
+        $imgResto = $form['img_resto']->getData();
+
         if($form->isSubmitted()){
             
             if($form->isValid()){
+
+                $nomImgResto = md5(uniqid()); // nom unique
+                $extensionImgResto = $imgResto->guessExtension(); // récupérer l'extension du picto
+                $newNomImgResto = $nomImgResto . '.' . $extensionImgResto; // recomposer un nom du picto
+
+                try { // on tente d'importer l'image
+
+
+                    $imgResto->move(
+                        $this->getParameter('dossier_photos_restaurants'),
+                        $newNomImgResto
+                    );
+                } catch (FileException $e) {
+                    $this->addFlash(
+                        'danger',
+                        'Une erreur est survenue lors de l\'importation d\'image'
+                    );
+                }
+
+                $restaurant->setImgResto($newNomImgResto); // nom pour la base de données
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($restaurant);
                 $manager->flush();
@@ -63,10 +87,42 @@ return $this->render('admin/adminRestaurantsForm.html.twig', [
     public function updateRestaurant(RestaurantsRepository $restaurantsRepository, $id, Request $request)
     {
         $restaurant = $restaurantsRepository->find($id);
+
+        // récupérer nom et chemin img1
+        $oldNomImgResto = $restaurant->getImgResto();
+        $oldCheminImgResto = $this->getParameter('dossier_photos_restaurants').'/'.$oldNomImgResto;
+
         $form = $this->createForm(RestaurantType::class, $restaurant);
         $form->handleRequest($request);
 
+        $imgResto = $form['img_resto']->getData();
+
         if($form->isSubmitted() && $form->isValid()){
+
+            // supprimer ancienne picto
+            if ($oldNomImgResto != null) {
+                unlink($oldCheminImgResto);
+            }
+
+
+            $nomImgResto = md5(uniqid()); // nom unique
+            $extensionImgResto = $imgResto->guessExtension(); // récupérer l'extension du picto
+            $newNomImgResto = $nomImgResto . '.' . $extensionImgResto; // recomposer un nom du picto
+
+            try { // on tente d'importer le picto                                      
+                $imgResto->move(
+                    $this->getParameter('dossier_photos_restaurants'),
+                    $newNomImgResto
+                );
+            } catch (FileException $e) {
+                $this->addFlash(
+                    'danger',
+                    'Une erreur est survenue lors de l\'importation d\'image'
+                );
+            }
+
+            $restaurant->setImgResto($newNomImgResto); // nom pour la base de données
+
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($restaurant);
                 $manager->flush();
@@ -88,6 +144,15 @@ return $this->render('admin/adminRestaurantsForm.html.twig', [
     public function deleteRestaurant(RestaurantsRepository $restaurantsRepository, $id)
     {
         $restaurant = $restaurantsRepository->find($id);
+
+        // récupérer le nom et le chemin de l'image à supprimer
+        $nomImgResto = $competence->getImgResto();
+        $cheminImgResto = $this->getParameter('dossier_iphotos_restaurants') . '/' . $nomImgResto;
+
+        // supprimer img1
+        if ($nomImgResto != null) {
+            unlink($cheminImgResto);
+        }
         
         $manager = $this->getDoctrine()->getManager();
         $manager->remove($restaurant);

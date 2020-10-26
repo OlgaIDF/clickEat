@@ -6,6 +6,7 @@ use App\Entity\Restaurants;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
@@ -30,8 +31,9 @@ class RestaurantType extends AbstractType
             ]
         ]
         )
-            ->add('img_resto',TextType::class, [
-                'required' => true,
+            ->add('img_resto',FileType::class, [
+                'required' => false,
+                'mapped' => false,
                 'label' => 'Photo du restaurant',
                 'attr' => [
                     'placeholder' => 'image.jpg'

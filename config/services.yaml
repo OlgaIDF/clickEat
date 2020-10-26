@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     app.copyright: 'Copyright &copy; 2020 | ClickEat'
+    dossier_photos_restaurants: '%kernel.project_dir%/public/img/resto'
 
 services:
     # default configuration for services in *this* file
