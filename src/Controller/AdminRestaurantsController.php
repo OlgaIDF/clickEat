@@ -58,6 +58,7 @@ class AdminRestaurantsController extends AbstractController
                 }
 
                 $restaurant->setImgResto($newNomImgResto); // nom pour la base de données
+                
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($restaurant);
                 $manager->flush();
@@ -146,8 +147,8 @@ return $this->render('admin/adminRestaurantsForm.html.twig', [
         $restaurant = $restaurantsRepository->find($id);
 
         // récupérer le nom et le chemin de l'image à supprimer
-        $nomImgResto = $competence->getImgResto();
-        $cheminImgResto = $this->getParameter('dossier_iphotos_restaurants') . '/' . $nomImgResto;
+        $nomImgResto = $restaurant->getImgResto();
+        $cheminImgResto = $this->getParameter('dossier_photos_restaurants') . '/' . $nomImgResto;
 
         // supprimer img1
         if ($nomImgResto != null) {

@@ -14,7 +14,7 @@
                     <th scope="col">Nom du menu</th>
                     <th scope="col">Composants</th>
                     <th scope="col">Prix</th> 
-                    <th scope="col">Restaurant_id</th>                   
+                    <th scope="col">Nom du restaurant</th>                   
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -25,7 +25,7 @@
                         <td>{{ menu.nom }}</td>
                         <td>{{ menu.composants }}</td>
                          <td>{{ menu.prix }}</td>
-                        <td>{{ menu.restaurant.id }}</td>
+                        <td>{{ menu.restaurant.nom }}</td>
                         
                         <td>
                             <a href="{{ path('menu_update', {'id':menu.id}) }}">

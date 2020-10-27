@@ -6,6 +6,7 @@
 parameters:
     app.copyright: 'Copyright &copy; 2020 | ClickEat'
     dossier_photos_restaurants: '%kernel.project_dir%/public/img/resto'
+    dossier_photos_menus: '%kernel.project_dir%/public/img/menus'
 
 services:
     # default configuration for services in *this* file
