@@ -3,13 +3,22 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background: url(../img/pattern.png) !important;
-   padding-top: 4rem;
+    background: #Fff6EE !important;
+   padding-top: 5rem;
 }
 .navbar {
-
+  background-color: #936C48 !important;
   height: 4rem;
-  font-size: 00.7rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  
+  text-transform: uppercase;
+}
+.navbar a {
+ color: white; 
+}
+.navbar a:hover{
+  color:#a2c3a8;
 }
 
 :target:before { 
@@ -21,11 +30,21 @@ body{
 }
 
 h2, h5, h6 {
-  font-family: 'Norican', cursive;
+  font-family: 'Raleway', sans-serif;
+  color: #783B5B;
+  
   
 }
 h2{
-  letter-spacing: 0.1rem; 
+  letter-spacing: 0.1rem;
+  font-weight: 800 !important; 
+  
+}
+
+h5{
+  text-transform: uppercase;
+  font-size: 0.5rem;
+
 }
 .logo{
 width: 8rem;
@@ -55,12 +74,15 @@ font-size: 1.5rem;
     text-decoration: none;
   }
 
+  footer{
+    background-color: #936C48;
+  }
   footer a{
-    color:#79a67f;
+    color:white;
     
   }
   footer a:hover{
-    color:#a2c3a8;
+    color:white;
   }
   .rs ul li{
     font-size: 1.5rem;
