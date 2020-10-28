@@ -1,6 +1,7 @@
 :root{
   font-size: calc(0.6em + 1vw);
 }
+
 body{
     font-family: 'Roboto', sans-serif;
     background: #Fff6EE !important;
@@ -29,21 +30,42 @@ body{
   visibility: hidden; 
 }
 
-h2, h5, h6 {
+h1, h2, h5, h6 {
   font-family: 'Raleway', sans-serif;
   color: #783B5B;
+  text-transform: uppercase;
+  font-weight: 800 !important; 
   
   
 }
-h2{
+
+h1{
   letter-spacing: 0.1rem;
-  font-weight: 800 !important; 
   
+  font-size: 1.5rem !important;
+}
+h2{
+  
+  font-size: 1.3rem !important;
+  border-top: 1px solid #79a67f;
+  border-bottom: 2px solid #79a67f;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+h5{
+  font-size: 1rem !important;
+}
+
+
+
+hr{
+  border-top: 2px solid#79a67f!important;
+    
 }
 
 h5{
   text-transform: uppercase;
-  font-size: 0.5rem;
+  font-size: 0.3rem;
 
 }
 .logo{
@@ -67,6 +89,7 @@ font-size: 1.5rem;
     background-color: #79a67f ;
     color: white;
     text-decoration:none;
+    font-size: 0.7rem !important;
   }
   .btn-sm:hover{
     background-color:  #a2c3a8 ;

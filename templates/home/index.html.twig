@@ -8,7 +8,8 @@
 <div class="container">
 <div class="row">
 <div class="col-12 text-center">
-<h2 class="py-3">Choisissez votre restaurant</h2>
+<h1 class="pt-4">Choisissez votre restaurant</h1>
+<hr class="pb-3">
 </div>
 </div>
 <div class="row">
@@ -16,7 +17,7 @@
 <div class="col-md-6 col-sm-12">
 <div class="cardh mb-3">
   <div class="row no-gutters">
-    <div class="col-md-4 mt-3">
+    <div class="col-md-4 mt-4">
      <img src="{{ asset('img/resto/' ~ restaurant.imgResto) }}" class="card-img-top" alt="...">
 
     </div>
@@ -51,7 +52,8 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-12 text-center">
-<h2 class="my-4 text-center">Maison latine</h2>
+<h2 class="mt-4 text-center">Maison latine</h2>
+
 </div>
 </div>
 <div class="row">
@@ -78,14 +80,14 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-12 text-center">
-<h2 class="my-4 text-center">Saveurs italiens</h2>
+<h2 class="mt-4 text-center">Saveurs italiens</h2>
+
 </div>
 </div>
 <div class="row">
 {% for menu in menus %}
 {% if menu.restaurant.nom  == 'Saveurs italiens' %}
-<div class="col-4 p-3">
-
+<div class="col-md-4 col-sm-12git  p-3">
 <div class="card m-3">
   <img src="{{ asset('img/menus/' ~ menu.imgMenu) }}" class="card-img-top" alt="...">
   <div class="card-body text-center">
@@ -108,7 +110,8 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-12 text-center">
-<h2 class="my-4 text-center">Comme chez toi</h2>
+<h2 class="mt-4 text-center">Comme chez toi</h2>
+
 </div>
 </div>
 <div class="row">
@@ -136,7 +139,8 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-12 text-center">
-<h2 class="my-4 text-center">Palais français</h2>
+<h2 class="mt-4 text-center">Palais français</h2>
+
 </div>
 </div>
 <div class="row">
