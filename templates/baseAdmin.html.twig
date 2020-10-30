@@ -6,7 +6,7 @@
 		<meta name="description" content="site BNB">
 		<meta="viewport" content="width=device-width, initial-scale=1.0">
 			<meta name="autor" content="Olha NEKRASHEVYCH">
-			<link rel="stylesheet" href="{{ asset('css/styleAdmi.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/styleAdmin.css') }}">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 			<link href="https://fonts.googleapis.com/css2?family=Norican&family=Roboto&display=swap" rel="stylesheet">
 			<script src="https://kit.fontawesome.com/5cc1af7af2.js" crossorigin="anonymous"></script>
@@ -27,13 +27,18 @@
                     </div>
                 {% endfor %}
             {% endfor %}
-				<div class="container-fluid m-0 p-0">
-                <div class="jumbotron mb-0 alert-dark text-center">
+				<div class="container-fluid">
+               <div class="row top">
+			   
+						<div class="col-12 p-3 text-white text-center">
+						
                     <h2>ClickEat- espace administrateur</h2>
-                    <p>Bienvenue sur l'espace administrateur du site ClickEat</p>
-                </div>
-            </div>
+                    <p class="bienvenue">Bienvenue sur l'espace administrateur du site ClickEat</p>
 
+               
+            </div>
+</div>
+</div>
 
 			</header>
 			<div class="container-fluid">
@@ -62,7 +67,7 @@
 
 			<footer>
 				
-					<div class="row alert-dark text-center ">
+					<div class="row text-center text-white">
 						<div class="col-12 p-3 font-weight-light">
 							{{ copyright|raw }}
 						</div>
