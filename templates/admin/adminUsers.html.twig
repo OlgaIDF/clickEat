@@ -7,9 +7,9 @@
 
     {{ parent() }}
 
-    <div class="col-10 p-5">
+    <div class="col-10">
 
-        <h2>Liste des utilisateurs</h2>
+        <h3 class="py-5">Liste des utilisateurs</h3>
 
         <table class="table table-bordered table-sm text-center">
             <thead>
@@ -55,7 +55,7 @@
             </tbody>
         </table>
 
-        <a href="{{ path('user_create') }}" class="btn btn-outline-dark float-right">Ajouter</a>
+        <a href="{{ path('user_create') }}" class="btn btn-outline-dark float-right mb-3">Ajouter</a>
 
     </div>
 

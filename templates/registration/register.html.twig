@@ -9,27 +9,47 @@
     {% endfor %}
 
     <div class="container">
-
+<h2 class="py-5 text-center">Inscription</h2>
         <div class="row">
-            <div class="col-4 offset-4 py-5">
-
-                <h1>Inscription</h1>
+            <div class="col-8 offset-2 py-5">
 
                 {{ form_start(registrationForm) }}
 
-                    {{ form_label(registrationForm.email) }}
-                    {{ form_widget(registrationForm.email) }}
-                    
-                    {{ form_row(registrationForm.plainPassword) }}
-                    {{ form_row(registrationForm.agreeTerms) }}
-                    
-                    <button type="submit" class="btn btn-outline-dark float-right">S'inscrire</button>
+                {{ form_label(registrationForm.nom) }}
+                {{ form_widget(registrationForm.nom) }}
 
-                {{ form_end(registrationForm) }}
+                {{ form_label(registrationForm.prenom) }}
+                {{ form_widget(registrationForm.prenom) }}
+                            
+           
+                {{ form_label(registrationForm.telephone) }}
+                {{ form_widget(registrationForm.telephone) }}
+
+                {{ form_label(registrationForm.email) }}
+                {{ form_widget(registrationForm.email) }}
+
+                {{ form_label(registrationForm.adresse) }}
+                {{ form_widget(registrationForm.adresse) }}
+                
+                {{ form_row(registrationForm.plainPassword) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+                
+                <button type="submit" class="btn btn-outline-dark float-right">S'inscrire</button>
+
+            {{ form_end(registrationForm) }}
+                 
+                    
+            
 
             </div>
+            
         </div>
-
+<div class="row">
+                <div class="col-12 text-center">
+                 <p><a href="{{ path('app_login') }}">Connectez-vous</a> si vous êtes déjà inscrit</p>
+   
+                </div>
+            </div>
     </div>
     
 {% endblock %}

@@ -86,7 +86,7 @@ class AdminUsersController extends AbstractController
                 $manager->flush();
                 $this->addFlash(
                     'success',
-                    'Le nouvel utilisateur à bien été modifié'
+                    'L\'utilisateur à bien été modifié'
                 );
             }
             else{
@@ -120,4 +120,6 @@ class AdminUsersController extends AbstractController
 
         return $this->redirectToRoute('admin_users');
     }
+
+    
 }

@@ -16,56 +16,21 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Rollerworks\Component\PasswordStrength\Validator\Constraints\PasswordStrength;
+
 
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('nom', TextType::class, [
-            'attr' => [
-                'placeholder' => 'Paul'
-            ]
-        ])
+        ->add('nom', TextType::class)
+        ->add('prenom', TextType::class)       
+        ->add('telephone', TelType ::class)
+        ->add('adresse', TextType ::class)
+        ->add('email', EmailType::class)
 
-        ->add('prenom', TextType::class, [
-            'attr' => [
-                'placeholder' => 'Dupont'
-            ]
-        ])
-
-        ->add('roles', ChoiceType::class, [
-            'choices' => [
-                'Utilisateur' => 'ROLE_USER',
-                'Serveur' => 'ROLE_SERVEUR',
-                'Gerant' => 'ROLE_ADMIN',
-                'Administrateur' => 'ROLE_SUPER_ADMIN'
-            ],
-            'expanded' => true,
-            'multiple' => true,
-            'label' => 'Rôles' 
-        ])
-        ->add('telephone', TelType ::class, [
-            'attr' => [
-                'placeholder' => '01010101'
-            ]
-        ])
-
-        ->add('adresse', TextType ::class, [
-            'attr' => [
-                'placeholder' => 'Paris'
-            ]
-        ])
-
-
-            ->add('email', EmailType::class, [
-                'attr' => [
-                    'placeholder' => 'test.test@mail.com'
-                ]
-            ])
             
-            ->add('plainPassword', PasswordType::class, [
+        ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
@@ -74,7 +39,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Merci de renseigner un mot de passe',
                     ]),
                     new Length([
-                        'min' => 8,
+                        'min' => 6,
                         'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
@@ -98,7 +63,7 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Accepter les conditions générales d\'utilisation'
             ])
 
-            ->add('Ajouter', SubmitType::class)
+           
 
         ;
     }

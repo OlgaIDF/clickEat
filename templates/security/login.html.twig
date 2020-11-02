@@ -21,7 +21,7 @@
                     </div>
                 {% endif %}
         
-                <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+                <h2 class="h3 mb-3 font-weight-normal text-center">Connexion</h2>
         
                 <label for="inputEmail">Email</label>
                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
@@ -48,9 +48,17 @@
                     Connexion
                 </button>
             </form>
+           
         </div>
 
     </div>
+    <div class="row">
+        <div class="col-12 text-center">
+         <p><a href="{{ path('app_register') }}">Créer un compte</a> pour obtenir plus d'options</p>
+
+        </div>
+    </div>
+</div>
 </div>
 
 {% endblock %}

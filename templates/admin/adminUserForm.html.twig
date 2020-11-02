@@ -7,9 +7,30 @@
     {{ parent() }}
 
     <div class="col-10 p-3">
-        <h2>Formulaire utilisateur</h2>
+        <h3 class="py-3">Formulaire utilisateur</h3>
         {{ form_start(formulaireUser) }}
+        {{ form_label(formulaireUser.nom) }}
+        {{ form_widget(formulaireUser.nom) }}
+
+        {{ form_label(formulaireUser.prenom) }}
+        {{ form_widget(formulaireUser.prenom) }}
+
+       
+        {{ form_label(formulaireUser.telephone) }}
+        {{ form_widget(formulaireUser.telephone) }}
+
+        {{ form_label(formulaireUser.email) }}
+        {{ form_widget(formulaireUser.email) }}
+
+        {{ form_label(formulaireUser.adresse) }}
+        {{ form_widget(formulaireUser.adresse) }}
+        
+        {{ form_row(formulaireUser.plainPassword) }}
+        {{ form_row(formulaireUser.agreeTerms) }}
+
+        <button type="submit" class="btn btn-outline-dark float-right">Valider</button>
         {{ form_end(formulaireUser) }}
+        
     </div>
 
 {% endblock %}
