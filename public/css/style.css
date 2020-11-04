@@ -52,9 +52,7 @@ h2 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-h5 {
-  font-size: 1rem !important;
-}
+
 
 hr {
   border-top: 2px solid#D90429 !important;
@@ -62,7 +60,7 @@ hr {
 
 h5 {
   text-transform: uppercase;
-  font-size: 0.3rem;
+ font-size: 1rem !important;
 }
 .logo {
   width: 8rem;
@@ -122,4 +120,8 @@ footer a:hover {
   list-style-type: none;
   color: white;
   font-size: 0.6rem;
+  
+}
+.table{
+  font-size: smaller;
 }

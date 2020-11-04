@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} -panier
+{% endblock %}
+
+{% block body %}
+    <div class="bg-light p-3">
+        <h1>Votre panier</h1>
+    </div>
+{% if items | length > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Restaurant</th>
+
+                <th>Menu</th>
+                <th>Image du menu</th>
+                <th>Composants</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.menu.restaurant.nom }}</td>
+                    <td><img src="{{ asset('img/menus/' ~ item.menu.imgMenu) }}" class="card-img-top" alt="..."></td>
+                    <td>{{ item.menu.nom }}</td>
+                    <td>{{ item.menu.composants }}</td>
+                    <td>{{ item.menu.prix }}&euro;</td>
+                    <td class="text-center">{{ item.quantity }}</td>
+                    <td> {{ item.menu.prix * item.quantity }}&euro;</td>
+                    <td>
+                        <a href="{{ path('cart_delete', {'id': item.menu.id }) }}" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6" class="text-right">Total : </td>
+                <td>{{ total }}&euro;</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+{% else %}
+    <p>Surprise, c'est vide !</p>
+{% endif %}
+    
+{% endblock %}
