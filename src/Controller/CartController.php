@@ -3,15 +3,13 @@
 namespace App\Controller;
 
 use App\Service\Cart\CartService;
-use App\Repository\MenusRepository;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CartController extends AbstractController
 {
     /**
-     * @Route("/panier", name="cart_index")
+     * @Route("/users/panier", name="cart_index")
      */
     public function index(CartService $cartService)
      {         
@@ -22,7 +20,7 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/panier/add/{id}", name="cart_add")
+     * @Route("/users/panier/add/{id}", name="cart_add")
      */
     public function add(CartService $cartService, $id ){
                 
@@ -32,7 +30,7 @@ class CartController extends AbstractController
     }
 
      /**
-     * @Route("/panier/delete/{id}", name="cart_delete")
+     * @Route("/users/panier/delete/{id}", name="cart_delete")
      */
     public function delete(CartService $cartService, $id ){
         $cartService->delete($id);

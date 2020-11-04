@@ -29,6 +29,9 @@ body {
   height: 4rem;
   visibility: hidden;
 }
+.profile{
+  text-transform: none;
+}
 
 h1,
 h2,

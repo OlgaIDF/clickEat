@@ -53,7 +53,9 @@ class CartService{
           
            $total+= $item['menu']-> getPrix() * $item['quantity'];
        }
+       $this ->session->set('total', $total);
        return $total;
+
    }
 }
 
