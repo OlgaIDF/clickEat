@@ -6,6 +6,7 @@ body {
   font-family: "Roboto", sans-serif;
   background: #edf2f4 !important;
   padding-top: 5rem;
+ 
 }
 .navbar {
   background-color: #8d99ae !important;
@@ -29,9 +30,7 @@ body {
   height: 4rem;
   visibility: hidden;
 }
-.profile{
-  text-transform: none;
-}
+
 
 h1,
 h2,
@@ -123,8 +122,14 @@ footer a:hover {
   list-style-type: none;
   color: white;
   font-size: 0.6rem;
+  text-transform: none;
   
 }
 .table{
   font-size: smaller;
+}
+
+.continuer a, .continuer a:hover{
+
+font-size: smaller;
 }

@@ -26,7 +26,7 @@ class CartService{
    public function delete($id){
 
       $panier =  $this ->session ->get('panier', []);
-        if(!empty($panier[$id])){
+        if(!empty($panier[$id])) {
             unset($panier[$id]);
         }
        

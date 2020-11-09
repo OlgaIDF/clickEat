@@ -4,17 +4,21 @@
 {% endblock %}
 
 {% block body %}
-    <div class="bg-light p-3">
-        <h1>Votre panier</h1>
+<div class="row">
+    <div class="col-12 text-center p-3">
+        <h2>Votre panier</h2>
     </div>
+ </div>   
 {% if items | length > 0 %}
+<div class="row">
+    <div class="col-10 offset-1">
     <table class="table">
-        <thead>
+        <thead class="text-center">
             <tr>
+                <th>N</th>
                 <th>Restaurant</th>
-
                 <th>Menu</th>
-                <th>Image du menu</th>
+                <th>Photo</th>
                 <th>Composants</th>
                 <th>Prix</th>
                 <th>Quantité</th>
@@ -25,8 +29,9 @@
         <tbody>
             {% for item in items %}
                 <tr>
+                    <td>{{ loop.index }}</td>
                     <td>{{ item.menu.restaurant.nom }}</td>
-                    <td><img src="{{ asset('img/menus/' ~ item.menu.imgMenu) }}" class="card-img-top" alt="..."></td>
+                    <td><img src="{{ asset('img/menus/' ~ item.menu.imgMenu) }}" class="card-img-top" width="100" alt="..."></td>
                     <td>{{ item.menu.nom }}</td>
                     <td>{{ item.menu.composants }}</td>
                     <td>{{ item.menu.prix }}&euro;</td>
@@ -41,14 +46,37 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="6" class="text-right">Total : </td>
+                <td colspan="7" class="text-right"><strong>Total : </strong></td>
                 <td>{{ total }}&euro;</td>
                 <td></td>
             </tr>
         </tfoot>
     </table>
+</div>
+</div>  
+<div class="row">
+    <div class="col-5 offset-1 mb-5">
+        <a href="{{ path('home') }}" class="continuer text-dark "><i class="fa fa-arrow-left" aria-hidden="true"></i> Continuer mes achats</a>
+    </div>
+    <div class="col-5 mb-5">
+        <a href="{{ path('validation') }}" class="btn btn-danger btn-sm float-right">COMMANDER <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+</div>  
+
+
 {% else %}
-    <p>Surprise, c'est vide !</p>
-{% endif %}
+<div class="row">
+    <div class="col-12 text-center">
+     <p>Votre panier est vide</p>   
+    </div>
+</div>
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <a href="{{ path('home') }}" class="btn btn-danger btn-sm">COMMANCER MES ACHATES</a>
+        </div>
+    </div>
+
     
+{% endif %}
+
 {% endblock %}
