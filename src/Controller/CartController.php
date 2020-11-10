@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Service\Cart\CartService;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CartController extends AbstractController
@@ -15,7 +17,9 @@ class CartController extends AbstractController
      {         
             return $this->render('cart/cart.html.twig', [
             'items' => $cartService ->getFullCart(),
-            'total' => $cartService ->getTotal()
+            'total' => $cartService ->getTotal(),
+            
+
         ]);
     }
 
@@ -37,8 +41,28 @@ class CartController extends AbstractController
         
         return $this->redirectToRoute("cart_index");
         
+    }   
+    
+/**
+     * @Route("/users/panier/validation", name="validation")
+     */
+    public function validation(CartService $cartService)
+ {
+    return $this->render('cart/validation.html.twig',  [
+        'items' => $cartService ->getFullCart(),
+        'total' => $cartService ->getTotal(),
+        
+
+    ]);
+ }
+    
        
+        
+
+       
+    
+
 
 
     }
-}
+

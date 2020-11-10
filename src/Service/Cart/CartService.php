@@ -13,6 +13,7 @@ class CartService{
       {
          $this ->session = $session;
          $this ->menusRepository = $menusRepository;
+         
       }
 
    public function add($id){
@@ -26,7 +27,7 @@ class CartService{
    public function delete($id){
 
       $panier =  $this ->session ->get('panier', []);
-        if(!empty($panier[$id])) {
+        if(array_key_exists($id, $panier)) {
             unset($panier[$id]);
         }
        
@@ -55,8 +56,14 @@ class CartService{
        }
        $this ->session->set('total', $total);
        return $total;
+ }
+       
+ 
 
-   }
+  
+
+
+
 }
 
 ?>

@@ -66,7 +66,7 @@
     <h5 class="card-title ">{{ menu.nom }}</h5>
     <p class="card-text text-left">{{ menu.composants }}</p>
     <p>{{ menu.prix }} &euro;</p>
-    <a href={{ path('cart_add', {'id': menu.id}) }}" class="btn-sm ">Ajouter au panier</a>
+    <a href="{{ path('cart_add', {'id': menu.id}) }}" class="btn-sm ">Ajouter au panier</a>
     
   </div>
 </div>

@@ -7,6 +7,7 @@ body {
   background: #edf2f4 !important;
   padding-top: 5rem;
  
+ 
 }
 .navbar {
   background-color: #8d99ae !important;
@@ -36,7 +37,7 @@ h1,
 h2,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", sans-serif !important;
   color: #2b2d42;
   text-transform: uppercase;
   font-weight: 800 !important;
