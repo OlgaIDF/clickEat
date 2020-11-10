@@ -8,10 +8,15 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <div class="container">
-<h2 class="py-5 text-center">Inscription</h2>
-        <div class="row">
-            <div class="col-8 offset-2 py-5">
+    <div class="row">
+        <div class="col-10 offset-1 text-center py-3">
+
+<h1 class="pt-3 text-center">Inscription</h1>
+<hr class="pb-3">
+    </div>
+ </div>   
+        <div class="row justify-content-center">
+            <div class="col-5 inscription">
 
                 {{ form_start(registrationForm) }}
 
@@ -34,7 +39,7 @@
                 {{ form_row(registrationForm.plainPassword) }}
                 {{ form_row(registrationForm.agreeTerms) }}
                 
-                <button type="submit" class="btn btn-outline-dark float-right">S'inscrire</button>
+                <button type="submit" class="btn btn-danger btn-sm float-right">S'inscrire</button>
 
             {{ form_end(registrationForm) }}
                  
@@ -45,7 +50,7 @@
             
         </div>
 <div class="row">
-                <div class="col-12 text-center">
+                <div class="col-12 text-center inscription py-3">
                  <p><a href="{{ path('app_login') }}">Connectez-vous</a> si vous êtes déjà inscrit</p>
    
                 </div>

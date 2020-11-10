@@ -3,39 +3,39 @@
 }
 body {
   font-family: "Roboto", sans-serif;
-  text-decoration: none;
-  list-style-type: none;
-  font-size: 0.8rem !important;
+  background: #edf2f4 !important;
+
 }
-h2 {
-  font-family: "Raleway", sans-serif !important;
+.logo {
+  width: 6rem;
+}
+header{
+  background-color: #8d99ae ;
+}
+h1 {
   letter-spacing: 0.1rem;
-  color: #d90429;
+  font-size: 1.2rem !important;
+  font-family: "Raleway", sans-serif !important;
 }
 
-h3 {
-  color: #2b2d42;
-  text-transform: uppercase;
-  font-size: 1.3rem !important;
-  padding-bottom: 1rem;
-  letter-spacing: 0.1rem;
-}
 .bienvenue {
   font-size: 1.2rem;
+  font-family: "Raleway", sans-serif !important;
 }
-.top,
+
 footer {
   background-color: #8d99ae !important;
   padding: 1rem;
 }
 
 .copyright {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
 }
 .listadmin ul {
   margin-left: -1.5rem;
   text-decoration: none;
   list-style-type: none;
+  font-size: 0.7rem;
 }
 .listadmin ul li a {
   color: #2b2d42;
@@ -58,4 +58,14 @@ table a {
 
 table a:hover {
   color: #000000;
+}
+.table{
+  font-size: 0.6rem ;
+}
+.btn, form, .form-control {
+  font-size: 0.7rem !important;
+  
+}
+.profile{
+  font-size: 0.7rem;
 }

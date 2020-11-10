@@ -12,9 +12,9 @@
    
 <div class="col-10 p-5">
 
-    <h3 class="py-3">Profile de {{app.user.nom}} {{app.user.prenom}}</h3>
-    <div class="container-fluid">
-        <div class="row">
+    <h1 class="py-3">Profile de {{app.user.nom}} {{app.user.prenom}}</h1>
+    <div class="container-fluid profile">
+        <div class="row ">
             <div class="col-3">
                 Nom:
             </div>
@@ -64,7 +64,8 @@
         </div>
        <div class="row pt-3">
             <div class="col-8">
-                <a href="{{ path('users_pass_modifier')}}" class="btn btn-outline-dark float-right">Modifier le mot de passe</a>
+                <div><a href="{{ path('users_pass_modifier')}}" class="btn btn-danger btn-sm mb-2">Modifier le mot de passe</a></div>
+               <div> <a href="{{ path('users_profil_modifier') }}" class="btn btn-danger btn-sm ">Modifier le profile</a></div>
             </div>
         </div>     
         </div>

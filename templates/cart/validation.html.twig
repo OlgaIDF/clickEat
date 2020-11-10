@@ -4,14 +4,47 @@
 {% endblock %}
 
 {% block body %}
+
 <div class="row">
-    <div class="col-12 text-center p-3">
-        <h2>Validation du panier</h2>
+   <div class="col-10 offset-1 text-center pt-3">
+        <h1>Validation du panier</h1>
+        <hr class="pb-3">
     </div>
- </div>   
+ </div> 
+ <div class="row">
+   <div class="col-3 offset-1 mb-5">
+      <h5 class="my-3 text-center">Vos données pour la livraison</h5>
+      <table class="table">
+         
+             <tr>
+                 <th>Nom</th>
+                 <td>{{ app.user.nom }}</td>
+                </tr>
+                <tr>
+                 <th>Prenom</th>
+                 <td>{{ app.user.prenom }}</td>
+                </tr>
+                <tr>
+                 <th>Contact</th>
+                 <td>{{ app.user.telephone }}</td>
+                </tr>
+                <tr>
+                 <th>Livraison</th>
+                  <td>{{ app.user.adresse }}</td>
+                </tr>
+                <tr>
+                 <th>Changer votre données</th>
+                  <td><a href="{{ path('users_profil_modifier') }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                </tr>
+               
+         </table>
+   </div>
+
+
 {% if items | length > 0 %}
-<div class="row">
-    <div class="col-10 offset-1">
+
+    <div class="col-7 offset-1 ">
+      <h5 class="my-3 text-center">Vos commandes</h5>
     <table class="table">
         <thead class="text-center">
             <tr>
@@ -29,9 +62,9 @@
         <tbody>
             {% for item in items %}
                 <tr>
-                    <td>{{ loop.index }}</td>
+                    <td>{{ loop.index }}.</td>
                     <td>{{ item.menu.restaurant.nom }}</td>
-                    <td><img src="{{ asset('img/menus/' ~ item.menu.imgMenu) }}" class="card-img-top" width="100" alt="..."></td>
+                    <td><img src="{{ asset('img/menus/' ~ item.menu.imgMenu) }}" class="card-img-top" width="60" alt="..."></td>
                     <td>{{ item.menu.nom }}</td>
                     <td>{{ item.menu.composants }}</td>
                     <td>{{ item.menu.prix }}&euro;</td>
@@ -51,42 +84,13 @@
     </table>
 </div>
 </div>  
-<div class="row">
-   <div class="col-10 offset-1">
-      <table class="table text-center">
-         <thead>
-             <tr>
-                 <th>Nom</th>
-                 <th>Prenom</th>
-                 <th>Contact</th>
-                 <th>Livraison</th>
-                 <th>Changer votre données</th>
-                 
-             </tr>
-         </thead>
-         <tbody>
-            
-                 <tr>
-                     <td>{{ app.user.nom }}</td>
-                     <td>{{ app.user.prenom }}</td>
-                     
-                     <td>{{ app.user.telephone }}</td>
-                     <td>{{ app.user.adresse }}</td>
-                     <td><a href="{{ path('users_profil_modifier') }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                     
-                 </tr>
-            
-         </tbody>
-         </table>
-   </div>
 
-</div>
 <div class="row">
-    <div class="col-5 offset-1 mb-5">
-        <a href="{{ path('cart_index') }}" class="continuer text-dark "><i class="fa fa-arrow-left" aria-hidden="true"></i> Retourner au panier</a>
+    <div class="col-5 offset-1 mb-5 continuer">
+        <a href="{{ path('cart_index') }}" class=" text-dark "><i class="fa fa-arrow-left" aria-hidden="true"></i> Retourner au panier</a>
     </div>
     <div class="col-5 mb-5">
-        <a href="#" class="btn btn-danger btn-sm float-right">PAYER <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        <a href="#" class="btn btn-danger btn-sm float-right">COMMANDER <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
     </div>
 </div>  
 

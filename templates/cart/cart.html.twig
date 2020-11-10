@@ -5,8 +5,9 @@
 
 {% block body %}
 <div class="row">
-    <div class="col-12 text-center p-3">
-        <h2>Votre panier</h2>
+    <div class="col-10 offset-1 text-center py-3">
+        <h1>Votre panier</h1>
+        <hr class="pb-3">
     </div>
  </div>   
 {% if items | length > 0 %}
@@ -29,9 +30,9 @@
         <tbody>
             {% for item in items %}
                 <tr>
-                    <td>{{ loop.index }}</td>
+                    <td>{{ loop.index }}.</td>
                     <td>{{ item.menu.restaurant.nom }}</td>
-                    <td><img src="{{ asset('img/menus/' ~ item.menu.imgMenu) }}" class="card-img-top" width="100" alt="..."></td>
+                    <td><img src="{{ asset('img/menus/' ~ item.menu.imgMenu) }}" class="card-img-top" width="60" alt="..."></td>
                     <td>{{ item.menu.nom }}</td>
                     <td>{{ item.menu.composants }}</td>
                     <td>{{ item.menu.prix }}&euro;</td>
@@ -55,11 +56,11 @@
 </div>
 </div>  
 <div class="row">
-    <div class="col-5 offset-1 mb-5">
-        <a href="{{ path('home') }}" class="continuer text-dark "><i class="fa fa-arrow-left" aria-hidden="true"></i> Continuer mes achats</a>
+    <div class="col-5 offset-1 mb-5 continuer">
+        <a href="{{ path('home') }}" class=" text-dark "><i class="fa fa-arrow-left" aria-hidden="true"></i> Continuer mes achats</a>
     </div>
     <div class="col-5 mb-5">
-        <a href="{{ path('validation') }}" class="btn btn-danger btn-sm float-right">COMMANDER <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        <a href="{{ path('validation') }}" class="btn btn-danger btn-sm float-right">VALIDER <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
     </div>
 </div>  
 

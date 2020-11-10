@@ -6,7 +6,7 @@
 
     {{ parent() }}
 <div class="col-10 p-5">
-    <h3 class="py-3">Liste des menus</h3>
+    <h1 class="py-3">Liste des menus</h1>
         <table class="table table-bordered table-hover table-sm">
             <thead>
                 <tr>
@@ -46,7 +46,7 @@
                 {% endfor %}
             </tbody>
         </table>
-        <a href="{{ path('menu_create') }}" class="btn btn-outline-dark float-right">Ajouter</a>
+        <a href="{{ path('menu_create') }}" class="btn btn-danger btn-sm float-right">Ajouter</a>
     </div>
 
 {% endblock %}
