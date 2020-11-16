@@ -50,8 +50,9 @@
             <tr>
                 <th>N</th>
                 <th>Restaurant</th>
-                <th>Menu</th>
                 <th>Photo</th>
+                <th>Menu</th>
+                
                 <th>Composants</th>
                 <th>Prix</th>
                 <th>Quantité</th>
@@ -90,7 +91,7 @@
         <a href="{{ path('cart_index') }}" class=" text-dark "><i class="fa fa-arrow-left" aria-hidden="true"></i> Retourner au panier</a>
     </div>
     <div class="col-5 mb-5">
-        <a href="#" class="btn btn-danger btn-sm float-right">COMMANDER <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        <a href="{{ path('commandes') }}" class="btn btn-danger btn-sm float-right">COMMANDER <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
     </div>
 </div>  
 

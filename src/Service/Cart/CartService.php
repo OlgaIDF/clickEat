@@ -2,7 +2,9 @@
 
 namespace App\Service\Cart;
 
+use App\Entity\Commandes;
 use App\Repository\MenusRepository;
+use App\Repository\CommandesRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CartService{
@@ -58,12 +60,15 @@ class CartService{
        return $total;
  }
        
- 
+
+
+
+}
 
   
 
 
 
-}
+
 
 ?>

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}menus{% endblock %}
+{% for label, messages in app.flashes(['success', 'danger']) %}
+{% for message in messages %}
+    <div class="flash-{{ label }} p-3 fixed-top bg-{{ label }} text-white text-center">
+        {{ message }}
+    </div>
+{% endfor %}
+{% endfor %}
+
+{% block body %}
+{% endblock %}
