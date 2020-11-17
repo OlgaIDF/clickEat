@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Commandes;
+use App\Form\CommandeType;
 use App\Service\Cart\CartService;
 use App\Repository\UserRepository;
 use App\Repository\MenusRepository;
 use App\Repository\CommandesRepository;
 use App\Repository\RestaurantsRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -85,6 +87,58 @@ $this->addFlash(
         ]);
 }
 
+    /**
+     * @Route("/commandes/gestion/update-{id}", name="commande_update")
+     */
+    public function updateCommande(CommandesRepository $commandesRepository, $id, Request $request)
+    {
+        $commande = $commandesRepository->find($id);
+
+        
+        $form = $this->createForm(CommandeType::class, $commande);
+        $form->handleRequest($request);
+
+       
+
+        if($form->isSubmitted() && $form->isValid()){
+
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($commande);
+                $manager->flush();
+                $this->addFlash(
+                    'success',
+                    'Le commande a bien été modifiée'
+                );
+                
+                return $this->redirectToRoute('commandes_gestion');
+            }
+            return $this->render('commandes/commandesEdit.html.twig', [
+                'formulaireCommande' => $form->createView()
+            ]);
+    }
+
+    /**
+     * @Route("/commandes/gestion/delete-{id}", name="commande_delete")
+     */
+    public function deleteCommande(CommandesRepository $commandesRepository, $id)
+    {
+        $commande= $commandesRepository->find($id);
+
+       
+        
+        $manager = $this->getDoctrine()->getManager();
+        $manager->remove($commande);
+        $manager->flush();
+
+        $this->addFlash(
+            'success',
+            'Le commande a bien été supprimée'
+        );
+
+       
+
+        return $this->redirectToRoute('commandes_gestion');
+    }
 
 
 

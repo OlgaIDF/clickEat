@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}commande-form{% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+<div class="col-10 p-5">
+    
+    <h1 class="py-3">Validation du commande</h1>
+        {{ form_start(formulaireCommande) }}
+        {{ form_end(formulaireCommande) }}
+        </div>
+{% endblock %}

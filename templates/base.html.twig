@@ -69,6 +69,10 @@
   
   <li><a href="{{ path('admin') }}"><i class="fa fa-unlock" aria-hidden="true"></i></a></li>
   {% endif %}
+  {% if is_granted('ROLE_SERVEUR') %}
+  
+  <li><a href="{{ path('commandes_gestion') }}"><i class="fa fa-list" aria-hidden="true"></i></a></li>
+  {% endif %}
   </ul>
 </nav>
 
