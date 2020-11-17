@@ -105,6 +105,7 @@ $this->addFlash(
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($commande);
                 $manager->flush();
+                //dd($commande);
                 $this->addFlash(
                     'success',
                     'Le commande a bien été modifiée'
@@ -142,6 +143,30 @@ $this->addFlash(
 
 
 
+  /**
+     * @Route("/commandes/email", name="commandes_email")
+     */
+
+    public function createEmail(CommandesRepository $commandesRepository, \Swift_Mailer $mailer)
+    {
+        $commandes= $commandesRepository->findAll();
+      
+      $mail = (new \Swift_Message('Facturation'))
+      ->setFrom('olha.idf@gmail.com')
+      ->setTo($commandes['utilisateur.email'])
+      ->setBody(
+          $this->renderView(
+              'commandes/email.html.twig'), 
+              'text/html'
+          
+      );
+  $mailer->send($mail);
+  $this->addFlash(
+      'success',
+      'Votre message a bien été envoyé'
+  );
+  return $this->redirectToRoute('home');
+}
 
 
 }

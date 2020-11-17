@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="site BNB">
+    <meta="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="autor" content="Olha NEKRASHEVYCH">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5cc1af7af2.js" crossorigin="anonymous"></script>
+       
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+
+
+{% block body %}{% endblock %}
+<div class="col-10 p-5">
+   {% for commande in commandes %} 
+   <h1 class="py-3">Votre commande reference {{commande.id}}</h1>
+
+   <table class="table">
+      <tr>
+         <th>Nom</th>
+         <td>{{ commande.utilisateur.nom}}</td>
+        </tr>
+        <tr>
+         <th>Prenom</th>
+         <td>{{ commande.utilisateur.prenom}}</td>
+        </tr>
+        <tr>
+         <th>Contact</th>
+         <td>{{ commande.utilisateur.telephone }}</td>
+        </tr>
+        <tr>
+         <th>Livraison</th>
+          <td>{{ commande.utilisateur.adresse}}</td>
+        </tr>
+        <tr>
+         <th>Date du commande</th>
+          <td>{{commande.date|date('Y-m-d')}}</td>
+        </tr>
+        <tr>
+         <th>Menus</th>
+          <td class='commande_menu'>  {% for menu in commande.menus %}
+            <p>Menu: {{ menu.menu.nom }}</p>
+            <p>Composants: {{ menu.menu.composants }}</p>
+            <p>Prix: {{ menu.menu.prix }} &euro;</p>
+            <p>Quantity: {{ menu.quantity }}</p>
+            <br>
+            {% endfor %}</td>
+        </tr>
+        <tr>
+         <th>Total</th>
+          <td>{{ commande.total }}&euro;</td>
+         </td>
+        </tr>
+
+           {% endfor %}
+           
+   
+   </table>
+ <div>Nous avons expédié votre commande</div>
+ 
+   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
