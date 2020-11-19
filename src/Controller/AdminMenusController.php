@@ -62,7 +62,7 @@ class AdminMenusController extends AbstractController
                 $manager->flush();
                 $this->addFlash(
                     'success',
-                    'Le menu a bien été modifiée'
+                    'Le menu a bien été ajouté'
                 );
             }
             else{
@@ -88,12 +88,12 @@ return $this->render('admin/adminMenusForm.html.twig', [
         $menu = $menusRepository->find($id);
 
         $oldNomImgMenu = $menu->getImgMenu();
-        $oldCheminImgMenu = $this->getParameter('dossier_photos_menus').'/'.$oldNomImgMenu;
-
+        $oldCheminImgMenu = $this->getParameter('dossier_photos_menus') . '/' . $oldNomImgMenu;
+       
         $form = $this->createForm(MenuType::class, $menu);
         $form->handleRequest($request);
 
-        $imgMenu = $form['img_menu']->getData();
+        $imgMenu = $form->get('img_menu')->getData();
 
         if($form->isSubmitted() && $form->isValid()){
 
@@ -125,7 +125,7 @@ return $this->render('admin/adminMenusForm.html.twig', [
                 $manager->flush();
                 $this->addFlash(
                     'success',
-                    'Le menu a bien été modifiée'
+                    'Le menu a bien été modifié'
                 );
                 
                 return $this->redirectToRoute('admin_menus');
