@@ -1,36 +1,38 @@
-{% extends 'baseAdmin.html.twig' %}
+{% extends 'baseAdmin.html.twig' %} {% block title %}user - form{% endblock
+title %} {% block body %}
 
-{% block title %}user - form{% endblock title %}
+{{ parent() }}
 
-{% block body %}
+<div class="col-10 p-5">
+  <h1 class="py-3">Formulaire utilisateur</h1>
+  {{ form_start(formulaireUser) }}
 
-    {{ parent() }}
+  {{ form_label(formulaireUser.nom) }}
+  {{ form_widget(formulaireUser.nom) }}
 
-    <div class="col-10 p-3">
-        <h1 class="py-3">Formulaire utilisateur</h1>
-        {{ form_start(formulaireUser) }}
-        {{ form_label(formulaireUser.nom) }}
-        {{ form_widget(formulaireUser.nom) }}
+  {{ form_label(formulaireUser.prenom) }}
+  {{ form_widget(formulaireUser.prenom) }}
 
-        {{ form_label(formulaireUser.prenom) }}
-        {{ form_widget(formulaireUser.prenom) }}
+  {{ form_label(formulaireUser.roles) }}
+  {{ form_widget(formulaireUser.roles) }}
 
-       
-        {{ form_label(formulaireUser.telephone) }}
-        {{ form_widget(formulaireUser.telephone) }}
+  {{ form_label(formulaireUser.telephone) }}
+  {{ form_widget(formulaireUser.telephone) }}
 
-        {{ form_label(formulaireUser.email) }}
-        {{ form_widget(formulaireUser.email) }}
+  {{ form_label(formulaireUser.email) }}
+  {{ form_widget(formulaireUser.email) }}
 
-        {{ form_label(formulaireUser.adresse) }}
-        {{ form_widget(formulaireUser.adresse) }}
-        
-        {{ form_row(formulaireUser.plainPassword) }}
-        {{ form_row(formulaireUser.agreeTerms) }}
+  {{ form_label(formulaireUser.adresse) }}
+  {{ form_widget(formulaireUser.adresse) }}
 
-        <button type="submit" class="btn btn-outline-dark float-right">Valider</button>
-        {{ form_end(formulaireUser) }}
-        
-    </div>
+  {{ form_row(formulaireUser.plainPassword) }}
+  {{ form_row(formulaireUser.agreeTerms) }}
+
+  <button type="submit" class="btn btn-danger btn-sm float-right">
+    Valider
+  </button>
+
+  {{ form_end(formulaireUser) }}
+</div>
 
 {% endblock %}

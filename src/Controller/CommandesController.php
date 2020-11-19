@@ -51,16 +51,16 @@ public function creerCommandes(SessionInterface $session, CartService $cartServi
     $manager->flush();
     
 
-    
+   $this->addFlash(
+        'success',
+        'Votre commande  a bien été ajoutée'
+    ); 
 
     
 
    $session->invalidate();
 
-$this->addFlash(
-        'success',
-        'Le restaurant a bien été modifiée'
-    );
+
   return $this->redirectToRoute('home');
   
  }

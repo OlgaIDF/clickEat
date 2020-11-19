@@ -1,0 +1,71 @@
+{% extends 'baseUsers.html.twig' %}
+
+{% block title %}accueil{% endblock %}
+
+
+{% block body %}
+
+
+{{ parent() }}
+
+   
+   
+<div class="col-10 p-5">
+
+    <h1 class="py-3">Mes commandes</h1>
+    <div class="container-fluid profile">
+      <table class="table table-bordered table-hover table-sm">
+         <thead>
+             <tr>
+                 
+                
+                 <th scope="col">Reference</th>
+ 
+                 <th scope="col">Date</th>
+                 <th scope="col">Menus</th>
+                 <th scope="col">Valider</th>
+                 <th scope="col">Total</th>
+                 
+             </tr>
+         </thead>
+          <tbody>
+             {% for commande in commandes %}
+             {% if commande.utilisateur.id  == app.user.id %}
+             <tr>
+                
+ 
+                
+ 
+                 <td>{{commande.id}}</td>
+                <td>{{commande.date|date('Y-m-d H:i:s')}}</td>
+ 
+                 <td class='commande_menu'>
+                     {% for menu in commande.menus %}
+ 
+ 
+                     <p>Menu: {{ menu.menu.nom }}</p>
+                     <p>Composants: {{ menu.menu.composants }}</p>
+                     <p>Prix: {{ menu.menu.prix }} &euro;</p>
+                     <p>Quantity: {{ menu.quantity }}</p>
+                     <br>
+                     {% endfor %}
+                 </td>
+ 
+                 <td>{{ commande.valider }}</td>
+                 <td>{{ commande.total }}&euro;</td>
+ 
+                
+             {% endif %}
+             {% endfor %}
+         </tbody> 
+     </table>
+        </div>
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

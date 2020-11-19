@@ -132,23 +132,23 @@
 
 </div>
 </div>
-<div class="row justify-content-center">
+<div class="row justify-content-center mx-5">
 {% for menu in menus %}
 {% if menu.restaurant.nom  == 'Palais français' %}
 <div class="col-xl-3 col-lg-4 col-sm-6 git p-2">
-<div class="card">
-  <img src="{{ asset('img/menus/' ~ menu.imgMenu) }}" class="card-img-top" alt="...">
-  <div class="card-body text-center">
-    <h5 class="card-title ">{{ menu.nom }}</h5>
-    <p class="card-text text-left">{{ menu.composants }}</p>
-    <p>{{ menu.prix }} &euro;</p>
-    <a href="{{ path('cart_add', {'id': menu.id}) }}" class="btn-sm ">Ajouter au panier</a>
-    
+  <div class="card">
+    <img src="{{ asset('img/menus/' ~ menu.imgMenu) }}" class="card-img-top" alt="...">
+    <div class="card-body text-center">
+      <h5 class="card-title ">{{ menu.nom }}</h5>
+      <p class="card-text text-left">{{ menu.composants }}</p>
+      <p>{{ menu.prix }} &euro;</p>
+      <a href="{{ path('cart_add', {'id': menu.id}) }}" class="btn-sm ">Ajouter au panier</a>
+      
+    </div>
   </div>
-</div>
-</div>
-{% endif %}
-{% endfor %}
+  </div>
+  {% endif %}
+  {% endfor %}
 </div>
 </section>
 

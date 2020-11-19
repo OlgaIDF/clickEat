@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\EditProfileType;
+use App\Repository\CommandesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -70,6 +71,18 @@ class UsersController extends AbstractController
 
         return $this->render('users/editpass.html.twig');
     }
+/**
+     * @Route("/users/commandes", name="users_commandes")
+     */
+public function histoireCommandes(CommandesRepository $commandesRepository){
+    $commandes= $commandesRepository->findAll();
+    return $this->render('users/commandesUsers.html.twig', [
 
 
+           
+        'commandes' => $commandes,
+        
+        
+    ]);
+}
 }

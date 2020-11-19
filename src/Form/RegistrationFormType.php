@@ -28,8 +28,19 @@ class RegistrationFormType extends AbstractType
         ->add('telephone', TelType ::class)
         ->add('adresse', TextType ::class)
         ->add('email', EmailType::class)
-
+        ->add('roles', ChoiceType::class, [
             
+            
+            'choices' => [
+                'Utilisateur' => 'ROLE_USER',
+                'Gerant' => 'ROLE_SERVEUR',
+                'Administrateur' => 'ROLE_ADMIN',
+                'SuperAdministrateur' => 'ROLE_SUPER_ADMIN'
+            ],
+            'expanded' => true,
+            'multiple' => true,
+            'label' => 'Rôles' 
+        ])
         ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
